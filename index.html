@@ -102,7 +102,7 @@
 </div>
 
 <audio id="bgm" autoplay muted loop>
-  <source src="https://raw.githubusercontent.com/Atashino/Your-smile/refs/heads/main/bgm.mp3" type="audio/mpeg">
+  <source src="https://raw.githubusercontent.com/Atashino/Your-smile/main/bgm.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -110,7 +110,7 @@
   document.addEventListener('click', function once() {
     const a = document.getElementById('bgm');
     a.muted = false;
-    a.play().catch(()=>{}); // best-effort
+    a.play().catch(()=>{}); // avoid autoplay policy errors
     document.removeEventListener('click', once);
   });
 </script>
