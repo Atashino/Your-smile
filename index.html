@@ -101,16 +101,18 @@
     </div>
 </div>
 
-<audio autoplay muted loop id="bgm">
-    <source src="https://raw.githubusercontent.com/Atashino/Your-smile/refs/heads/main/bgm.mp3">
+<audio id="bgm" autoplay muted loop>
+  <source src="https://raw.githubusercontent.com/Atashino/Your-smile/refs/heads/main/bgm.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-document.addEventListener("click", function() {
-    const audio = document.getElementById("bgm");
-    audio.muted = false;
-    audio.play();
-}, { once: true });
+  // Unmute after first user interaction
+  document.addEventListener('click', function once() {
+    const a = document.getElementById('bgm');
+    a.muted = false;
+    a.play().catch(()=>{}); // best-effort
+    document.removeEventListener('click', once);
+  });
 </script>
 
 <script>
