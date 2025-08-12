@@ -101,9 +101,17 @@
     </div>
 </div>
 
-<audio id="bgm" loop autoplay>
-    <source src="https://www.dropbox.com/scl/fi/xir1rv92blzd6w8n73n9a/I-Like-You-So-Much-Youll-Know-It-A-Love-So-Beautiful-OST-Wang-Junqi-English-Cover.mp3?rlkey=ixzk6t8a6n0ijt5gw4qkw59b4&st=6o0y8ezg&dl=1" type="audio/mpeg">
+<audio autoplay muted loop id="bgm">
+    <source src="https://github.com/Atashino/Your-smile/raw/refs/heads/main/I%20Like%20You%20So%20Much,%20Youll%20Know%20It%20(%E6%88%91%E5%A4%9A%E5%96%9C%E6%AC%A2%E4%BD%A0%E4%BD%A0%E4%BC%9A%E7%9F%A5%E9%81%93)-%20A%20Love%20So%20Beautiful%20OST%20-Wang%20Junqi%20%5BEnglish%20Cover%5D.mp3">
 </audio>
+
+<script>
+document.addEventListener("click", function() {
+    const audio = document.getElementById("bgm");
+    audio.muted = false;
+    audio.play();
+}, { once: true });
+</script>
 
 <script>
 const prism = document.getElementById('prism');
